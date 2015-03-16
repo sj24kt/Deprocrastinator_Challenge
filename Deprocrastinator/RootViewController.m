@@ -37,7 +37,6 @@
 
     cell.textLabel.text = [self.toDoRow objectAtIndex:indexPath.row];
 
-
     return cell;
 }
 
@@ -50,6 +49,20 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    cell.accessoryType = UITableViewCellAccessoryCheckmark;
 
+    UIView *bgColorView = [[UIView alloc] init];
+
+    if ([cell selectedBackgroundView])
+    {
+        bgColorView.backgroundColor = [UIColor greenColor];
+        [cell setSelectedBackgroundView:bgColorView];
+        cell.selected = YES;
+    }
+    else
+    {
+        bgColorView.backgroundColor = [UIColor whiteColor];
+        [cell setSelectedBackgroundView:bgColorView];
+        cell.selected = NO;
+    }
 }
 
 #pragma mark - IBActions
@@ -64,12 +77,15 @@
 }
 
 - (IBAction)editBarButtonOnPressed:(UIBarButtonItem *)sender {
-
+//    if (editing)
+//    {
+//        self.editButtonItem.title = NSLocalizedString(@"Cancel", @"Cancel");
+//    }
+//    else
+//    {
+//        self.editButtonItem.title = NSLocalizedString(@"Edit", @"Edit");
+//    }
 }
-
-
-
-
 
 @end
 
