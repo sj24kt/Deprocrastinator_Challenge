@@ -10,13 +10,18 @@
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 @property NSMutableArray *toDoRow;
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UITableView *toDoTableView;
+
 @end
 
 @implementation RootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.toDoRow = [NSMutableArray arrayWithObjects:@"Buy Bread", @"Take dog to groomers, Get oil change for car", nil];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -30,4 +35,35 @@
 
     return cell;
 }
+
+#pragma mark - IBActions
+
+- (IBAction)onAddButtonPressed:(UIButton *)button {
+    [self.toDoRow addObject:self.textField.text];
+    [self.toDoTableView reloadData];
+}
+
+- (IBAction)editBarButtonOnPressed:(UIBarButtonItem *)sender {
+
+}
+
+
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
