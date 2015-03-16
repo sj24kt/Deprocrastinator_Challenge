@@ -37,31 +37,19 @@
 
     cell.textLabel.text = [self.toDoRow objectAtIndex:indexPath.row];
 
-    UIView *bgColorView = [[UIView alloc] init];
-
-    if ([cell multipleSelectionBackgroundView])
-    {
-
-    }
-
-    if (!self.selectedCell)
-    {
-        bgColorView.backgroundColor = [UIColor greenColor];
-        [cell setSelectedBackgroundView:bgColorView];
-        self.selectedCell = YES;
-    }
-    else
-    {
-        bgColorView.backgroundColor = [UIColor whiteColor];
-        [cell setSelectedBackgroundView:bgColorView];
-        self.selectedCell = NO;
-    }
-
-
-
-
 
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    cell.textLabel.textColor = [UIColor greenColor];
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
 }
 
 #pragma mark - IBActions
