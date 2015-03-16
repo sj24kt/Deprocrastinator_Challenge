@@ -25,7 +25,8 @@
     self.toDoRow = [NSMutableArray arrayWithObjects:@"Buy Bread", @"Take dog to groomers", @"Get oil change for car", nil];
 
     self.selectedCell = NO;
-    
+
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -85,6 +86,16 @@
 //    {
 //        self.editButtonItem.title = NSLocalizedString(@"Edit", @"Edit");
 //    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+
+        [self.toDoRow removeObjectAtIndex:indexPath.row];
+
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 @end
