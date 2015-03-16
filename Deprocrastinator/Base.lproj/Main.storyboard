@@ -69,15 +69,8 @@
                             <constraint firstItem="Vwr-LR-5aa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="wex-Yf-Syk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Deprocrastinator" id="7aP-y8-2CM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="X4A-md-9Tz">
-                            <connections>
-                                <action selector="editBarButtonOnPressed:" destination="vXZ-lx-hvc" id="sZC-m3-XPf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Deprocrastinator" id="7aP-y8-2CM"/>
                     <connections>
-                        <outlet property="editButton" destination="X4A-md-9Tz" id="0Qo-n6-bFE"/>
                         <outlet property="textField" destination="Vwr-LR-5aa" id="4Vi-T0-dNg"/>
                         <outlet property="toDoTableView" destination="Gw6-QW-2Mf" id="jBj-r5-FQv"/>
                     </connections>

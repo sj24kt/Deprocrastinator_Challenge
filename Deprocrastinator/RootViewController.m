@@ -25,7 +25,8 @@
     self.toDoRow = [NSMutableArray arrayWithObjects:@"Buy Bread", @"Take dog to groomers", @"Get oil change for car", nil];
 
     self.selectedCell = NO;
-    
+
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -36,6 +37,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
 
     cell.textLabel.text = [self.toDoRow objectAtIndex:indexPath.row];
+
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    cell.textLabel.textColor = [UIColor greenColor];
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
 
     UIView *bgColorView = [[UIView alloc] init];
 
@@ -51,8 +64,6 @@
         [cell setSelectedBackgroundView:bgColorView];
         cell.selected = NO;
     }
-
-    return cell;
 }
 
 #pragma mark - IBActions
@@ -77,17 +88,15 @@
 //    }
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
 
-    cell.textLabel.textColor = [UIColor greenColor];
+        [self.toDoRow removeObjectAtIndex:indexPath.row];
 
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //    cell.accessoryType = UITableViewCellAccessoryCheckmark;
-
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
-
 
 @end
 
