@@ -39,27 +39,18 @@
 
     UIView *bgColorView = [[UIView alloc] init];
 
-    if ([cell multipleSelectionBackgroundView])
-    {
-
-    }
-
-    if (!self.selectedCell)
+    if ([cell selectedBackgroundView])
     {
         bgColorView.backgroundColor = [UIColor greenColor];
         [cell setSelectedBackgroundView:bgColorView];
-        self.selectedCell = YES;
+        cell.selected = YES;
     }
     else
     {
         bgColorView.backgroundColor = [UIColor whiteColor];
         [cell setSelectedBackgroundView:bgColorView];
-        self.selectedCell = NO;
+        cell.selected = NO;
     }
-
-
-
-
 
     return cell;
 }
@@ -76,11 +67,26 @@
 }
 
 - (IBAction)editBarButtonOnPressed:(UIBarButtonItem *)sender {
-
+//    if (editing)
+//    {
+//        self.editButtonItem.title = NSLocalizedString(@"Cancel", @"Cancel");
+//    }
+//    else
+//    {
+//        self.editButtonItem.title = NSLocalizedString(@"Edit", @"Edit");
+//    }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
+    cell.textLabel.textColor = [UIColor greenColor];
 
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+
+}
 
 
 @end
