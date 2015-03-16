@@ -67,13 +67,13 @@
 }
 
 - (IBAction)editBarButtonOnPressed:(UIBarButtonItem *)sender {
-//    if (editing)
-//    {
-//        self.editButtonItem.title = NSLocalizedString(@"Cancel", @"Cancel");
-//    }
-//    else
-//    {
-//        self.editButtonItem.title = NSLocalizedString(@"Edit", @"Edit");
+    if (self.editing)
+    {
+        self.editButtonItem.title = NSLocalizedString(@"Cancel", @"Done");
+    }
+    else
+    {
+        self.editButtonItem.title = NSLocalizedString(@"Edit", @"Edit");
 //    }
 }
 
