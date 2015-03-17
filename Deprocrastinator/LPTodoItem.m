@@ -10,6 +10,11 @@
 
 @implementation LPTodoItem
 
+- (void)deleteItem {
+    self.itemName = nil;
+    self.completed = nil;
+    self.priority = nil;
+}
 
 
 @end

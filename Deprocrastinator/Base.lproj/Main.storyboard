@@ -49,14 +49,25 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0QF-g2-CF3" appends="YES" id="8cp-Cs-HDC"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Deprocrastinator" id="7aP-y8-2CM"/>
+                    <navigationItem key="navigationItem" title="Deprocrastinator" id="7aP-y8-2CM">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="ksW-dv-3rV">
+                            <connections>
+                                <action selector="onEditButtonPressed:" destination="vXZ-lx-hvc" id="NH1-NO-lDv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addNewToDoTextField" destination="Vwr-LR-5aa" id="q8Z-ZT-zIl"/>
                         <outlet property="toDoListTableView" destination="Gw6-QW-2Mf" id="F8A-45-l9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="0QF-g2-CF3"/>
             </objects>
             <point key="canvasLocation" x="738" y="757"/>
         </scene>
