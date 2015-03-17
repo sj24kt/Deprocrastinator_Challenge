@@ -2,13 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5lR-um-sCT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Deprocrastinator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ToDoListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -17,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gw6-QW-2Mf">
-                                <rect key="frame" x="0.0" y="110" width="320" height="459"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Gw6-QW-2Mf">
+                                <rect key="frame" x="0.0" y="64" width="320" height="505"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" rowHeight="30" id="r6M-ni-dCj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoListCell" rowHeight="35" id="r6M-ni-dCj">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6M-ni-dCj" id="f71-hb-Gi3">
@@ -34,20 +33,13 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="E23-zN-eo9"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-LR-5aa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your todo task" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-LR-5aa">
                                 <rect key="frame" x="16" y="72" width="240" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TkG-Dp-ZZq"/>
-                                    <constraint firstAttribute="width" constant="240" id="ZQl-oO-bc4"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBy-sT-cAE">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBy-sT-cAE">
                                 <rect key="frame" x="274" y="72" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="eaZ-Tg-E2D"/>
-                                </constraints>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -57,27 +49,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Gw6-QW-2Mf" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="110" id="1bs-O5-KMx"/>
-                            <constraint firstItem="Vwr-LR-5aa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="ARl-xI-uov"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Gw6-QW-2Mf" secondAttribute="bottom" constant="-1" id="FCB-fg-KEM"/>
-                            <constraint firstItem="hBy-sT-cAE" firstAttribute="leading" secondItem="Vwr-LR-5aa" secondAttribute="trailing" constant="18" id="FxQ-EI-uQw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Gw6-QW-2Mf" secondAttribute="trailing" constant="-16" id="P44-Gc-ecs"/>
-                            <constraint firstItem="hBy-sT-cAE" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="QOt-9s-YyJ"/>
-                            <constraint firstItem="hBy-sT-cAE" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="jvD-If-SZ7"/>
-                            <constraint firstItem="Gw6-QW-2Mf" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="l6h-dB-dGS"/>
-                            <constraint firstItem="Vwr-LR-5aa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="wex-Yf-Syk"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Deprocrastinator" id="7aP-y8-2CM"/>
                     <connections>
-                        <outlet property="textField" destination="Vwr-LR-5aa" id="4Vi-T0-dNg"/>
-                        <outlet property="toDoTableView" destination="Gw6-QW-2Mf" id="jBj-r5-FQv"/>
+                        <outlet property="addNewToDoTextField" destination="Vwr-LR-5aa" id="q8Z-ZT-zIl"/>
+                        <outlet property="toDoListTableView" destination="Gw6-QW-2Mf" id="F8A-45-l9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738" y="763"/>
+            <point key="canvasLocation" x="738" y="757"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S4d-Tm-VDk">

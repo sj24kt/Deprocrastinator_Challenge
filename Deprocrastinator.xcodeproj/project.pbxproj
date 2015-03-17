@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		1874459E1AB7480A005033A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1874459D1AB7480A005033A5 /* main.m */; };
 		187445A11AB7480A005033A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 187445A01AB7480A005033A5 /* AppDelegate.m */; };
-		187445A41AB7480A005033A5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187445A31AB7480A005033A5 /* RootViewController.m */; };
 		187445A71AB7480A005033A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187445A51AB7480A005033A5 /* Main.storyboard */; };
 		187445A91AB7480A005033A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187445A81AB7480A005033A5 /* Images.xcassets */; };
 		187445AC1AB7480A005033A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187445AA1AB7480A005033A5 /* LaunchScreen.xib */; };
 		187445B81AB7480A005033A5 /* DeprocrastinatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 187445B71AB7480A005033A5 /* DeprocrastinatorTests.m */; };
+		187445C61AB7A632005033A5 /* LPTodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 187445C51AB7A632005033A5 /* LPTodoItem.m */; };
+		187445C91AB7A89F005033A5 /* ToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187445C81AB7A89F005033A5 /* ToDoListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +33,16 @@
 		1874459D1AB7480A005033A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1874459F1AB7480A005033A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		187445A01AB7480A005033A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		187445A21AB7480A005033A5 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		187445A31AB7480A005033A5 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		187445A61AB7480A005033A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		187445A81AB7480A005033A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		187445AB1AB7480A005033A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		187445B11AB7480A005033A5 /* DeprocrastinatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeprocrastinatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		187445B61AB7480A005033A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		187445B71AB7480A005033A5 /* DeprocrastinatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeprocrastinatorTests.m; sourceTree = "<group>"; };
+		187445C41AB7A632005033A5 /* LPTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPTodoItem.h; sourceTree = "<group>"; };
+		187445C51AB7A632005033A5 /* LPTodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPTodoItem.m; sourceTree = "<group>"; };
+		187445C71AB7A89F005033A5 /* ToDoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListViewController.h; sourceTree = "<group>"; };
+		187445C81AB7A89F005033A5 /* ToDoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +86,10 @@
 			children = (
 				1874459F1AB7480A005033A5 /* AppDelegate.h */,
 				187445A01AB7480A005033A5 /* AppDelegate.m */,
-				187445A21AB7480A005033A5 /* RootViewController.h */,
-				187445A31AB7480A005033A5 /* RootViewController.m */,
+				187445C71AB7A89F005033A5 /* ToDoListViewController.h */,
+				187445C81AB7A89F005033A5 /* ToDoListViewController.m */,
+				187445C41AB7A632005033A5 /* LPTodoItem.h */,
+				187445C51AB7A632005033A5 /* LPTodoItem.m */,
 				187445A51AB7480A005033A5 /* Main.storyboard */,
 				187445A81AB7480A005033A5 /* Images.xcassets */,
 				187445AA1AB7480A005033A5 /* LaunchScreen.xib */,
@@ -219,7 +224,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187445A41AB7480A005033A5 /* RootViewController.m in Sources */,
+				187445C91AB7A89F005033A5 /* ToDoListViewController.m in Sources */,
+				187445C61AB7A632005033A5 /* LPTodoItem.m in Sources */,
 				187445A11AB7480A005033A5 /* AppDelegate.m in Sources */,
 				1874459E1AB7480A005033A5 /* main.m in Sources */,
 			);
